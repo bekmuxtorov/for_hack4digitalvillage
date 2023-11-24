@@ -6,5 +6,6 @@ admin.site.site_header = "Terminal"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include("base.urls"))
+    path('api/', include("base.urls")),
+    path('api/', include("account.urls"))
 ]

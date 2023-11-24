@@ -16,12 +16,12 @@ class AccountRegisterSerializers(serializers.ModelSerializer):
             'password2': {'write_only': True},
         }
 
-        def create(self, validate_date):
-            phone_number = validate_date.get('phone_number')
-            full_name = validate_date.get('full_name')
-            farm_name = validate_date.get('farm_name')
-            password = validate_date.get('password')
-            password2 = validate_date.get('password2')
+        def create(self, validated_data):
+            phone_number = validated_data.get('phone_number')
+            full_name = validated_data.get('full_name')
+            farm_name = validated_data.get('farm_name')
+            password = validated_data.get('password')
+            password2 = validated_data.get('password2')
 
             if password == password2:
                 user = Account(
